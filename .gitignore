@@ -1,0 +1,20 @@
+_*
+sratoolkit.3.0.1-ubuntu64
+vdb-config.txt
+timings.log
+.vscode-server
+.ncbi
+.ssh
+.dotnet
+sratoolkit.tar.gz
+metric.log
+ddfile
+elasticblast-377213-d7caa49d0a5c.json
+elasticblast-377213-1fb9cc0dcc14.json
+*.sra
+pipeline_analysis_Backup.accdb
+pipeline_analysis.accdb
+~$comprehensive comparison.xlsx
+comprehensive comparison.xlsx
+sratoolkit.3.0.5-ubuntu64/**
+

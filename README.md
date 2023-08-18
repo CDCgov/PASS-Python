@@ -2,7 +2,70 @@
 
 **Template for clearance: This project serves as a template to aid projects in starting up and moving through clearance procedures. To start, create a new repository and implement the required [open practices](open_practices.md), train on and agree to adhere to the organization's [rules of behavior](rules_of_behavior.md), and [send a request through the create repo form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) using language from this template as a Guide.**
 
-**General disclaimer** This repository was created for use by CDC programs to collaborate on public health related projects in support of the [CDC mission](https://www.cdc.gov/about/organization/mission.htm).  GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise. 
+**General disclaimer** This repository was created for use by CDC programs to collaborate on public health related projects in support of the [CDC mission](https://www.cdc.gov/about/organization/mission.htm).  GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise. # pass-python
+
+- Run 0-git.sh
+- Restart vscode
+- Run 1-bootstrap.sh
+- python3 execute-pd.py
+
+# Benchmarking - local-ssd:
+#Reads
+sudo hdparm -tv /dev/nvme0n1p1
+sudo hdparm -tv /dev/md127
+#Writes
+sudo dd if=/dev/nvme0n1p1 of=ddfile bs=8k count=250000
+sudo dd if=/dev/md127 of=ddfile bs=8k count=250000
+
+# Benchmarking = pd-xxxxxxx:
+#Reads
+sudo hdparm -tv /dev/sdb1
+sudo hdparm -tv /dev/sdc1
+#Writes
+sudo dd if=/dev/sdb1 of=ddfile bs=8k count=250000
+sudo dd if=/dev/sdc1 of=ddfile bs=8k count=250000
+
+
+# Monitor CPUs:
+watch mpstat -P ALL
+top
+iotop
+
+# puplic ip for sql firewall
+curl https://ipinfo.io/ip
+
+#secret manager
+gcloud secrets add-iam-policy-binding pass-sql-password \
+    --role roles/secretmanager.secretAccessor \
+    --member serviceAccount:30811739638-compute@developer.gserviceaccount.com
+
+# GCP VM List
+https://gcloud-compute.com/download.html
+# Disks
+https://gcloud-compute.com/disks.html
+
+
+Name                    Description                             Cost/GB
+-----------             ---------------------------------       --------
+pd-standard	            Standard Persistent Disk	            0.05	
+local-ssd	            Local SSD	                            0.09	
+pd-balanced	            Balanced Persistent Disk	            0.12	
+hyperdisk-extreme	    Hyperdisk Extreme Persistent Disk	    0.15	
+pd-extreme	            Extreme Persistent Disk	                0.15	
+pd-ssd	                SSD Persistent Disk	                    0.2	    
+
+
+
+sralist-10000.txt =
+10000 Random SRAs from 2023-04-01 to 2023-06-30 (140,908 Samples)
+Excludes GB = 0
+
+//////////////////////////////////////////////
+// gcp dOWNLOAD COMARE
+//////////////////////////////////////////////
+Using sralist-10000
+sralist-100recent.txt is the largest 
+
 
 ## Access Request, Repo Creation Request
 

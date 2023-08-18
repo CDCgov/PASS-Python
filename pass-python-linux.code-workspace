@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../mnt"
+		}
+	],
+	"settings": {
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/*/**": true,
+			"**/.hg/store/**": true,
+			"**/__pycache__/**": true,
+			"/home/josep/pass/sratoolkit.3.0.1-ubuntu64/**":true
+			//,"/**":true
+		}
+		//,"files.watcherInclude": ["/mnt/**", "/home/josep/**"],
+	
+	}
+}
